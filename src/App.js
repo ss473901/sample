@@ -1,25 +1,20 @@
-import logo from './logo.svg';
+//useStateの使い方
+
+import React, { useState }  from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+//現在の状態を管理:useState 現在の状態を管理する関数:count 現在の状態を変更する関数:setCount
 
+function App(){
+  const [count, setCount] = useState(0); 
+  return(
+    <div>
+      <p>You clicked {count} times.</p>
+      <button onClick={ ()=> setCount(count + 1)}> 
+        Click me
+      </button>
+    </div>
+  )
+}
+//現在の状態を変更する関数setCountの引数をcount + 1とすることでuseStateの引数に1を追加するようになる
 export default App;
